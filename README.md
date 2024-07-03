@@ -8,6 +8,7 @@ This repository is the official implementation of "TTD: Text-Tag Self-Distillati
 
 # Update
 [07/02/2024] Our TTD has been accepted to ECCV 2024. 🔥🔥🔥
+
 [04/02/2024] Released initial commits.
 
 ### Citation
