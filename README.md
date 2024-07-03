@@ -7,6 +7,7 @@ This repository is the official implementation of "TTD: Text-Tag Self-Distillati
 [arXiv](https://arxiv.org/abs/2404.00384)
 
 # Update
+[07/02/2024] Our TTD has been accepted to ECCV 2024. 🔥🔥🔥
 [04/02/2024] Released initial commits.
 
 ### Citation
@@ -15,10 +16,8 @@ Please cite our paper if the code is helpful to your research.
 @misc{jo2024ttd,
       title={TTD: Text-Tag Self-Distillation Enhancing Image-Text Alignment in CLIP to Alleviate Single Tag Bias}, 
       author={Sanghyun Jo and Soohyun Ryu and Sungyub Kim and Eunho Yang and Kyungsu Kim},
-      year={2024},
-      eprint={2404.00384},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+      booktitle={European Conference on Computer Vision (ECCV)},
+      year={2024}
 }
 ```
 
