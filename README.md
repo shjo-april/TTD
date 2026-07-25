@@ -2,11 +2,15 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/ttd-text-tag-self-distillation-enhancing/semantic-segmentation-on-cc3m-tagmask)](https://paperswithcode.com/sota/semantic-segmentation-on-cc3m-tagmask?p=ttd-text-tag-self-distillation-enhancing)
 
 # TTD: Text-Tag Self-Distillation Enhancing Image-Text Alignment in CLIP to Alleviate Single Tag Bias
-This repository is the official implementation of "TTD: Text-Tag Self-Distillation Enhancing Image-Text Alignment in CLIP to Alleviate Single Tag Bias".
+This repository is the official implementation of "TTD: Text-Tag Self-Distillation Enhancing Image-Text Alignment in CLIP to Alleviate Single Tag Bias", accepted to ECCV 2024. Please feel free to reach out for any questions or discussions.
 
-[arXiv](https://arxiv.org/abs/2404.00384)
+[[paper]](https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/10592.pdf) [[arXiv]](https://arxiv.org/abs/2404.00384) [[slides]](https://eccv.ecva.net/media/eccv-2024/Slides/2259_i4ex75H.pdf) [[poster]](https://eccv.ecva.net/media/PosterPDFs/ECCV%202024/2259.png?t=1726141858.1666896) [[video]](https://youtu.be/kiCgc99BA9Y)
 
 # Update
+[07/25/2026] Released the complete implementation of TTD (preprocessing, training, and evaluation).
+
+> We sincerely apologize for the long delay in releasing the code, which was due to company commitments, and we thank everyone for their patience. We will continue supporting this work so that its ideas can better contribute to the community and to future research.
+
 [07/02/2024] Our TTD has been accepted to ECCV 2024. 🔥🔥🔥
 
 [04/02/2024] Released initial commits.
@@ -14,7 +18,7 @@ This repository is the official implementation of "TTD: Text-Tag Self-Distillati
 ### Citation
 Please cite our paper if the code is helpful to your research.
 ```
-@misc{jo2024ttd,
+@inproceedings{jo2024ttd,
       title={TTD: Text-Tag Self-Distillation Enhancing Image-Text Alignment in CLIP to Alleviate Single Tag Bias}, 
       author={Sanghyun Jo and Soohyun Ryu and Sungyub Kim and Eunho Yang and Kyungsu Kim},
       booktitle={European Conference on Computer Vision (ECCV)},
@@ -150,9 +154,7 @@ Create a directory "../VOC2012/" for storing the dataset and appropriately place
 ```
 
 # Preprocessing
-Our code is coming soon.
-
-<!-- Calculate image-text similarities on all training datasets for sample-level pruning
+Calculate image-text similarities on all training datasets for sample-level pruning
 ```bash
 python3 preprocess_caption_similarities.py --gpus 0 --root ../ --data cc3m --arch TCL --image 224 --scales 1.0 --hflip
 python3 preprocess_caption_similarities.py --gpus 0 --root ../ --data cc12m --arch TCL --image 224 --scales 1.0 --hflip
@@ -162,15 +164,13 @@ Merge all scores per caption for sample-level pruning
 ```bash
 python3 preprocess_sample-level_pruning.py --data cc3m --domain train --arch TCL
 python3 preprocess_sample-level_pruning.py --data cc12m --domain train --arch TCL
-``` -->
+```
 
 # Training
-Our code is coming soon.
-
-<!-- Train TCL with our method, TTD.
+Train TCL with our method, TTD.
 ```bash
 CUDA_VISIBLE_DEVICES=0 python3 train.py --data cc3m+cc12m --arch TCL --scales 1.0 --tag "TCL+TTD"
-``` -->
+```
 
 # Visualization
 Visualize heatmaps for a wild image.
@@ -184,6 +184,8 @@ Release our checkpoint.
 | Method  | Checkpoints                  |
 |:-------:|:----------------------------:|
 | TCL+TTD | [Google Drive](https://drive.google.com/file/d/1_H_OMaPncJ4uzAFSn9Cms6LBzk_oYZCR/view?usp=sharing) |
+
+Place the downloaded checkpoint in "./weights/" (i.e., "./weights/TCL+TTD.pt"). The pretrained TCL checkpoint should also be placed as "./weights/TCL_ViT-B@16.pt" (please refer to the official [TCL](https://github.com/kakaobrain/tcl) repository).
 
 Evaluate performance for multi-tag selection (input: texts)
 ```bash
