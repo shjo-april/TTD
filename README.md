@@ -4,7 +4,7 @@
 # TTD: Text-Tag Self-Distillation Enhancing Image-Text Alignment in CLIP to Alleviate Single Tag Bias
 This repository is the official implementation of "TTD: Text-Tag Self-Distillation Enhancing Image-Text Alignment in CLIP to Alleviate Single Tag Bias", accepted to ECCV 2024. Please feel free to reach out for any questions or discussions.
 
-[[paper]](https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/10592.pdf) [[arXiv]](https://arxiv.org/abs/2404.00384) [[slides]](https://eccv.ecva.net/media/eccv-2024/Slides/2259_i4ex75H.pdf) [[poster]](https://eccv.ecva.net/media/PosterPDFs/ECCV%202024/2259.png?t=1726141858.1666896) [[video]](https://youtu.be/kiCgc99BA9Y)
+[[project page]](https://shjo-april.github.io/TTD/) [[paper]](https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/10592.pdf) [[arXiv]](https://arxiv.org/abs/2404.00384) [[slides]](https://eccv.ecva.net/media/eccv-2024/Slides/2259_i4ex75H.pdf) [[poster]](https://eccv.ecva.net/media/PosterPDFs/ECCV%202024/2259.png?t=1726141858.1666896) [[video]](https://youtu.be/kiCgc99BA9Y)
 
 # Update
 [07/25/2026] Released the complete implementation of TTD (preprocessing, training, and evaluation).
