@@ -6,6 +6,8 @@ This repository is the official implementation of "TTD: Text-Tag Self-Distillati
 
 [[project page]](https://shjo-april.github.io/TTD/) [[paper]](https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/10592.pdf) [[arXiv]](https://arxiv.org/abs/2404.00384) [[slides]](https://eccv.ecva.net/media/eccv-2024/Slides/2259_i4ex75H.pdf) [[poster]](https://eccv.ecva.net/media/PosterPDFs/ECCV%202024/2259.png?t=1726141858.1666896) [[video]](https://youtu.be/kiCgc99BA9Y)
 
+![TTD in four scenes: the single tag bias of CLIP-based models, tag selection by pixel-tag scoring, text-tag self-distillation, and the results](./figures/hero.gif)
+
 # Update
 [07/25/2026] Released the complete implementation of TTD (preprocessing, training, and evaluation).
 
@@ -234,3 +236,12 @@ python3 evaluate_segmentation.py --data Cityscapes --pred "./results/TCL@Citysca
 python3 evaluate_segmentation.py --data COCO-Stuff --pred "./results/TCL@COCO-Stuff@OpenAI@[1.0, 0.5, 1.5, 2.0]@448@s=2@hflip@pamr@TTD@bg=0.40/" --tag "TCL+TTD@COCO-Stuff"
 python3 evaluate_segmentation.py --data PascalContext --pred "./results/TCL@PascalContext@OpenAI@[1.0, 0.5, 1.5, 2.0]@448@s=2@hflip@pamr@TTD@bg=0.45/" --tag "TCL+TTD@PascalContext"
 ```
+
+# Reproduce the hero GIF
+The GIF at the top is composed from panels of the figures of the paper (Fig. 1, 2, 4, 6 and 7), stored in `hero_gif/panels`, and from numbers of Tables 2 to 4, written in `hero_gif/scenes.py`. It needs no GPU and no model.
+```bash
+# write figures/hero.gif (Pillow 8.2 or later, NumPy)
+python3 hero_gif/build_gif.py
+```
+- The panels are the images embedded in the published PDF of the paper at their original resolution. The two score charts of Fig. 1 are rendered from the same PDF.
+- The committed GIF was rendered on Windows with Segoe UI. On other systems the script falls back to the DejaVu Sans bundled with matplotlib.
